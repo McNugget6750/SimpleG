@@ -6,10 +6,15 @@ Ultra fast Windows console based gCode sender for grbl
 * Generate your g-Code file you want to stream to the grbl controller.
 * Check the SimpleG-end.gcode file and define what you want to happen when you abort the program by hitting CTRL+C
 * Start the program by typing: 
-```SimpleG.exe -f test.gcode -F SimpleG-end.gcode -p com6
+```
+SimpleG.exe -f test.gcode -F SimpleG-end.gcode -p com6
+```
 
 # Parameters
-* -p followed by the desired COM-port. For using COM-ports over COM9 you have to type \\\\\\\\.\\\\COM10
+* -p followed by the desired COM-port. For using COM-ports over COM9 you have to type 
+```
+SimpleG.exe -f test.gcode -F SimpleG-end.gcode -p \\\\.\\COM10
+```
 * -f followed by the desired gCode file to stream
 * -F followed by the abort gCode file you want to stream in case you hit CTRL+C
 
