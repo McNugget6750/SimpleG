@@ -18,6 +18,10 @@ I developed this with the code:blocks IDE (http://www.codeblocks.org/) together 
 I provided the project file so you can directly start developing under windows.
 Therefore I didn't provide a makefile but that might follow later.
 
+# Binaries
+Under bin/Release and bin/Debug you can find precompiled binaries (exe-files) that can be used under Windows 10 64bit.
+I didn't test those under any other Windows system. It might work. It might through an error!
+
 #TODO:
 * Understand and optimize timouts for receiving single bytes
 * Further testing and debugging
