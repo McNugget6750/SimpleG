@@ -9,5 +9,5 @@ Ultra fast windows console based gCode sender for grbl
 ```SimpleG.exe -f test.gcode -F SimpleG-end.gcode -p com6
 
 # Comments
-* Please change the parameters according to your configuration. Com-ports over COM9 you have to type \\\\.\\COM10
+* Please change the parameters according to your configuration. Com-ports over COM9 you have to type \\\\\\\\.\\\\COM10
 * All other parameters 
