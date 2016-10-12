@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1476153753 source:g:\dropbox\cnc software\laser cutter\simpleg\main.cpp
+	<stdlib.h>
+	<windows.h>
+	<stdio.h>
+	<conio.h>
+	<iostream>
+	<string>
+	<fstream>
+	<windows.h>
+	"ftd2xx.h"
+
+1475627720 g:\dropbox\cnc software\laser cutter\simpleg\ftd2xx.h
+	<windows.h>
+	"WinTypes.h"
+
