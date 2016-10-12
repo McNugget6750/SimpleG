@@ -25,6 +25,6 @@ I didn't test those under any other Windows system. It might work. It might thro
 #TODO:
 * Understand and optimize timouts for receiving single bytes
 * Further testing and debugging
-* Evaluate why my personal laser and grbl configuration sometimes does not turn of the laser after M5 S0 command followed by G0 commands. It works flawless with following G1 commands.
+* Evaluate why my personal laser and grbl configuration sometimes does not turn of the laser after M5 S0 command followed by G0 commands. It works well with following G1 commands.
 * Implement into GUI for users who like single button GUIs... this will likely never happen.
 * Provide a makefile for msys and cygwin users
