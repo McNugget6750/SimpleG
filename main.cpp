@@ -269,7 +269,7 @@ int main(int argc, char *argv[])
 
     int lineLen = 0;                // The current line length we plan to send out.
 
-    while (1)  // same as: while (getline( myfile, sendLine ).good())
+    while (1)  // Main Loop
     {
         // Fetch a new line from the file
         if (gCodeSentOut == true)   // Did we send out the last gCode already?
@@ -357,7 +357,7 @@ int main(int argc, char *argv[])
         // Have we reached the end of the file and the buffer is empty? Then exit.
         if (charsInGRBLBuffer == 0 && !newLineAvailable)
             break;
-    }
+    } // End main loop
 
     // We have reached the end of the program and provide some statistical data
     cout << "\ngCode program end.\n";
