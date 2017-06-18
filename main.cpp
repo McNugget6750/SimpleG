@@ -58,6 +58,7 @@ int main(int argc, char *argv[])
     unsigned long numLine = 0;
     unsigned long numOK = 0;
     unsigned long numERROR = 0;
+    bool done_error_reading = false;
 
     int charsInGRBLBuffer = 0;
     std::list<int> gCodesSent;
@@ -334,17 +335,29 @@ int main(int argc, char *argv[])
         {
             gCodesSent.pop_front(); // Delete the front entry because we have received an OK for this entry
             numOK++;    // Count the number of "ok" messages
-            //cout << "ok\n";
+            cout << "ok\n";
             readLine.clear();   // Clear receive line buffer
         }
         else if (readLine.find("error") != string::npos) // In case of an error, we want the whole error message and continue after.
         {
+            cout << "Error found, looking for end of line...\n";
+            if(readLine.find('/n') != string::npos)
+            {
+                cout << "Found End of Line\n";
+                done_error_reading = true;
+            }
+
+            if(done_error_reading == true)
+            {
+                cout << "ERROR MESG: " << readBuffer;   // Print the error message for the users convenience.
+                gCodesSent.pop_front(); // Delete the front entry because we have received an Error for this entry
+                numERROR++; // Count the number of "error" messages
+                readLine.clear();   // Clear receive line buffer
+                done_error_reading = false;
+            }
             // TODO: Track what gCode was sent that caused the error message.
-            ReadFile(hCom, readBuffer, 255, &dwBytesRead, NULL);
-            cout << "ERROR MESG: " << readBuffer;   // Print the error message for the users convenience.
-            gCodesSent.pop_front(); // Delete the front entry because we have received an OK for this entry
-            numERROR++; // Count the number of "error" messages
-            readLine.clear();   // Clear receive line buffer
+            //ReadFile(hCom, readBuffer, 255, &dwBytesRead, NULL);
+
         }
 
         // Calc the sum of all bytes sent to grbl
